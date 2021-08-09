@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import NavBar from './components/NavBar';
-// import Pilots from './components/Pilots';
-// import Planets from './components/Planets';
 import People from './components/People';
-import Starships from './components/Starships';
+import Vehicles from './components/Vehicles';
 
-import { ReactQueryDevtools } from 'react-query/devtools'
+// import { ReactQueryDevtools } from 'react-query/devtools'
 
 
 const queryClient = new QueryClient();
@@ -15,7 +13,7 @@ const queryClient = new QueryClient();
 
 export default function App() {
 
-  const [ page, setPage ] = useState( 'starships');
+  const [ page, setPage ] = useState( 'vehicles');
 
 
   return (
@@ -27,12 +25,9 @@ export default function App() {
 
           <QueryClientProvider client={ queryClient }>
 
-              { page === 'starships' ? <Starships /> : <People /> }     
+              { page === 'vehicles' ? <Vehicles /> : <People /> }     
 
-              {/* <Pilots /> */}
-
-              {/* <Starships /> */}
-              <ReactQueryDevtools initialIsOpen={false} />
+              {/* <ReactQueryDevtools initialIsOpen={false} /> */}
           </QueryClientProvider>
       </div>
 
